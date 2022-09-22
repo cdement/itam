@@ -1,30 +1,46 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
   <router-view/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import { defineComponent } from 'vue'
+import { useAppStore } from './store'
+import EventBus from '@/AppEventBus'
 
-nav {
-  padding: 30px;
+export default defineComponent({
+  name: 'App',
+  setup () {
+    const $appState = useAppStore()
+    const themeChangeListener = (event) => {
+      const elementId = 'theme-link'
+      const linkElement = document.getElementById(elementId)
+      const cloneLinkElement = linkElement.cloneNode(true)
+      const newThemeUrl = linkElement.getAttribute('href').replace($appState.theme, event.theme)
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+      cloneLinkElement.setAttribute('id', elementId + '-clone')
+      cloneLinkElement.setAttribute('href', newThemeUrl)
+      cloneLinkElement.addEventListener('load', () => {
+        linkElement.remove()
+        cloneLinkElement.setAttribute('id', elementId)
+      })
+      linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling)
 
-    &.router-link-exact-active {
-      color: #42b983;
+      $appState.$patch({ theme: event.theme, darkTheme: event.dark })
     }
+
+    return {
+      themeChangeListener
+    }
+  },
+  mounted () {
+    EventBus.on('theme-change', this.themeChangeListener)
+  },
+  beforeUnmount () {
+    EventBus.off('theme-change', this.themeChangeListener)
   }
-}
+})
+</script>
+
+<style lang="scss">
+@import './assets/style/app/app.scss';
 </style>

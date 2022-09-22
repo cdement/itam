@@ -1,24 +1,12 @@
-# itam
+# IT Asset Manager (ITAM)
+> A highly customizable software for management of IT assets and devices. ITAM uses the nosql database [MongoDB](https://mongodb.com) as a powerful backend for storage.
 
-## Project setup
-```
-yarn install
-```
+## Documentation
+Check out the documentation to get started:
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## Semver
+IT Asset Manager (ITAM) is following [Semantic Versioning 2.0](https://semver.org).
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## License
+Copyright (c) 2022 Colby Dement
+[BSD 3 Clause License](https://en.wikipedia.org/wiki/BSD_licenses#3-clause)

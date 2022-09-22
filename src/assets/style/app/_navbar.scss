@@ -1,0 +1,111 @@
+.layout-navbar {
+  padding: 0;
+  height: $nav-bar-height;
+  position: fixed;
+  top: 0;
+  left: $side-nav-width;
+  width: calc(100% - $side-nav-width);
+  z-index: 3100;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+
+  &.layout-navbar--sticky {
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-button {
+    color: var(--text-color);
+    height: $nav-button-height;
+    width: $nav-button-width;
+    text-align: center;
+    transition: background-color .2s;
+    cursor: pointer;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    &:first-child {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    i {
+      font-size: 24px;
+      line-height: inherit;
+    }
+  }
+
+  .theme-button {
+    height: $nav-button-height;
+    
+    &:focus {
+      outline: 0 none;
+      outline-offset: 0;
+      box-shadow: none;
+    }
+  }
+
+  .app-theme {
+    background-color: var(--primary-color);
+    color: var(--primary-color-text);
+    padding: .5rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+    width: 39px;
+    height: 39px;
+
+    img {
+      width: 25px;
+    }
+  }
+}
+
+.layout-wrapper--dark {
+  .layout-navbar {
+    &.layout-navbar--sticky {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-button {
+      background-color: var(--surface-0);
+      border: none !important;
+      color: var(--text-color);
+
+      &:hover {
+        background-color: var(--surface-50) !important;
+        color: var(--text-color);
+      }
+
+      &:focus {
+        outline: 0 none;
+        outline-offset: 0;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.layout-wrapper--light {
+  .layout-navbar {
+    &.layout-navbar--sticky {
+      background-color: rgba(255,255,255,0.3);
+    }
+
+    .nav-button {
+      background-color: var(--surface-200);
+      border: none !important;
+      color: var(--text-color);
+
+      &:hover {
+        background-color: var(--surface-100) !important;
+        color: var(--text-color);
+      }
+
+      &:focus {
+        outline: 0 none;
+        outline-offset: 0;
+        box-shadow: none;
+      }
+    }
+  }
+}
