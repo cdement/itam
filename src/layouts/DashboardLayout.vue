@@ -1,6 +1,7 @@
 <template>
   <div class="layout-wrapper" :class="containerClass">
     <app-nav-bar />
+    <app-sidebar />
     <div class="layout-content">
       <router-view />
     </div>
@@ -15,11 +16,13 @@
 import { defineComponent } from 'vue'
 import { useAppStore } from '@/store'
 import AppNavBar from '@/components/core/AppNavBar.vue'
+import AppSidebar from '@/components/core/AppSidebar.vue'
 
 export default defineComponent({
   name: 'DashboardLayout',
   components: {
-    AppNavBar
+    AppNavBar,
+    AppSidebar
   },
   setup () {
     const hasClass = (element, className) => {

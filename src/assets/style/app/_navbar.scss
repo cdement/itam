@@ -1,17 +1,17 @@
 .layout-navbar {
   padding: 0;
   height: $nav-bar-height;
-  position: fixed;
+  position: $nav-bar-position;
   top: 0;
-  left: $side-nav-width;
-  width: calc(100% - $side-nav-width);
+  left: $sidebar-width;
+  width: calc(100% - $sidebar-width);
   z-index: 3100;
   display: flex;
   align-items: center;
-  padding: 0 2rem;
+  padding: $nav-bar-padding;
 
   &.layout-navbar--sticky {
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur($nav-bar-bg-blur);
   }
 
   .nav-button {
@@ -63,7 +63,7 @@
 .layout-wrapper--dark {
   .layout-navbar {
     &.layout-navbar--sticky {
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: $nav-bar-sticky-dark-bg;
     }
 
     .nav-button {
@@ -88,7 +88,7 @@
 .layout-wrapper--light {
   .layout-navbar {
     &.layout-navbar--sticky {
-      background-color: rgba(255,255,255,0.3);
+      background-color: $nav-bar-sticky-light-bg;
     }
 
     .nav-button {

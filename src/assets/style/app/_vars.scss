@@ -1,4 +1,16 @@
-$side-nav-width:      100px;
-$nav-bar-height:      5rem;
-$nav-button-height:   48px;
-$nav-button-width:    auto;
+$nav-bar-height:                     5rem;
+$nav-bar-position:                  fixed;
+$nav-bar-padding:                  0 2rem;
+$nav-bar-bg-blur:                    12px;
+$nav-bar-sticky-dark-bg:          rgba(0,0,0,0.3);
+$nav-bar-sticky-light-bg:         rgba(255,255,255,0.3);
+
+$nav-button-height:                  48px;
+$nav-button-width:                   auto;
+
+$sidebar-position:                  fixed;
+$sidebar-left-pos:                      0;
+$sidebar-top-pos:                       0;
+$sidebar-height:                     100%;
+$sidebar-width:                     100px;
+$sidebar-hf-height:                  6rem;

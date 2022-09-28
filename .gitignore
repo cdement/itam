@@ -24,3 +24,4 @@ pnpm-debug.log*
 *.lock
 .lock
 *lock.json
+.yarnclean

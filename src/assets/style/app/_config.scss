@@ -1,7 +1,7 @@
 .layout-content {
   margin-top: $nav-bar-height;
-  margin-left: $side-nav-width;
-  width: calc(100vw - $side-nav-width);
+  margin-left: $sidebar-width;
+  width: calc(100vw - $sidebar-width);
   height: calc(100vh - $nav-bar-height);
   padding: 2rem;
 }

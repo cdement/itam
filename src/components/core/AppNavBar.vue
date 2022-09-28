@@ -3,8 +3,8 @@
     <div class="flex-auto flex grid">
       <div class="col"></div>
       <div class="col-4 justify-content-end flex align-items-center">
-        <p-button label="Check Out/In" class="nav-button"></p-button>
-        <p-button label="New Issue" class="nav-button"></p-button>
+        <!-- <p-button label="Check Out/In" class="nav-button"></p-button>
+        <p-button label="New Issue" class="nav-button"></p-button> -->
         <p-button :icon="themeIcon" class="p-button-rounded outline-none theme-button" :class="themeClass" @click="changeTheme"></p-button>
       </div>
     </div>
@@ -25,10 +25,10 @@ export default defineComponent({
     const changeTheme = (event) => {
       const current = $appState.theme
 
-      if (current === 'saga-blue') {
-        EventBus.emit('theme-change', { theme: 'arya-blue', dark: true })
+      if (current === 'lara-light-blue') {
+        EventBus.emit('theme-change', { theme: 'lara-dark-blue', dark: true })
       } else {
-        EventBus.emit('theme-change', { theme: 'saga-blue', dark: false })
+        EventBus.emit('theme-change', { theme: 'lara-light-blue', dark: false })
       }
     }
 
